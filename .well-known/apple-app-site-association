@@ -3,11 +3,23 @@
     "apps": [],
     "details": [
       {
-        "appID": "4VLL8DRCL3.com-chungchunon.chungchunon-ios",
+        "appIDs": [
+          "4VLL8DRCL3.com-chungchunon.chungchunon-ios"
+        ],
         "paths": [
           "*"
+        ],
+        "components": [
+          {
+            "/": "/*"
+          }
         ]
       }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "4VLL8DRCL3.com-chungchunon.chungchunon-ios"
     ]
   }
 }
