@@ -1,1 +1,9 @@
-잠시만 기다려주세요..
+<script>
+  // redirect all 404 to index.html preserving the path
+  var redirectTo =
+    window.location.origin +
+    "/#" +
+    window.location.pathname +
+    window.location.search;
+  window.location.replace(redirectTo);
+</script>
