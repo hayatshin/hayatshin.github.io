@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript">
+      // 현재 URL path를 hash로 바꿔서 index.html로 이동
+      const redirectUrl =
+        "/#" +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      window.location.replace(redirectUrl);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
