@@ -1,4 +1,4 @@
-<!-- <script type="text/javascript" charset="UTF-8">
+<script type="text/javascript" charset="UTF-8">
   var inappdeny_exec_vanillajs = (callback) => {
     if (document.readyState !== "loading") {
       callback();
@@ -29,8 +29,13 @@
 
     if (useragt.match(/kakaotalk/i)) {
       //카카오톡 외부브라우저로 호출
-      location.href =
+      // location.href =
+      //   "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
+
+      const a = document.createElement("a");
+      a.href =
         "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
+      a.click();
     } else if (useragt.match(/line/i)) {
       //라인 외부브라우저로 호출
       if (target_url.indexOf("?") !== -1) {
@@ -68,4 +73,4 @@
       }
     }
   });
-</script> -->
+</script>
