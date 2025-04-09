@@ -29,8 +29,12 @@
 
     if (useragt.match(/kakaotalk/i)) {
       //카카오톡 외부브라우저로 호출
-      location.href =
-        "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
+      // location.href =
+      //   "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
+      const urlParams = new URLSearchParams(window.location.search);
+      const sendUserId = urlParams.get("sendUserId") || "";
+      const deeplink = `intent://partner?sendUserId=${sendUserId}#Intent;scheme=hayatapp;package=com.hayat.app;end`;
+      location.href = deeplink;
     } else if (useragt.match(/line/i)) {
       //라인 외부브라우저로 호출
       if (target_url.indexOf("?") !== -1) {
