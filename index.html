@@ -25,13 +25,12 @@
     }
 
     var useragt = navigator.userAgent.toLowerCase();
-    // var target_url = location.href;
-    var cleanUrl = location.origin + location.pathname + location.search;
+    var target_url = location.href;
 
     if (useragt.match(/kakaotalk/i)) {
       //카카오톡 외부브라우저로 호출
       location.href =
-        "kakaotalk://web/openExternal?url=" + encodeURIComponent(cleanUrl);
+        "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
     } else if (useragt.match(/line/i)) {
       //라인 외부브라우저로 호출
       if (target_url.indexOf("?") !== -1) {
