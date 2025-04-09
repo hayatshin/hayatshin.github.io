@@ -31,10 +31,11 @@
       //카카오톡 외부브라우저로 호출
       // location.href =
       //   "kakaotalk://web/openExternal?url=" + encodeURIComponent(target_url);
-      const urlParams = new URLSearchParams(window.location.search);
-      const sendUserId = urlParams.get("sendUserId") || "";
-      const deeplink = `intent://partner?sendUserId=${sendUserId}#Intent;scheme=hayatapp;package=com.hayat.app;end`;
-      location.href = deeplink;
+
+      location.href =
+        "intent://" +
+        target_url.replace(/https?:\/\//i, "") +
+        "#Intent;scheme=http;package=com.android.chrome;end";
     } else if (useragt.match(/line/i)) {
       //라인 외부브라우저로 호출
       if (target_url.indexOf("?") !== -1) {
